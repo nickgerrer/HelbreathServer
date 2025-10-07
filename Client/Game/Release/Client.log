@@ -6,91 +6,37 @@
   DXC_dsound.cpp
   Effect.cpp
   Game.cpp
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(13955,27): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(16795,32): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(16803,32): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(16811,32): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(16819,33): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(16829,33): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(16837,33): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(17884,21): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(28141,16): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(30352,38): warning C4805: '!=': unsafe mix of type 'int' and type 'bool' in operation
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Game.cpp(31444,26): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(14568,27): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(17502,32): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(17510,32): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(17518,32): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(17526,33): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(17536,33): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(17544,33): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(18591,21): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(25315,33): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(28963,16): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(31225,38): warning C4805: '!=': unsafe mix of type 'int' and type 'bool' in operation
+C:\Users\miste\source\repos\HelbreathServer\Client\Game.cpp(32317,26): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
   GameMonitor.cpp
   Item.cpp
   ItemName.cpp
   Magic.cpp
   MapData.cpp
   Misc.cpp
+  MobCounter.cpp
   MouseInterface.cpp
   Msg.cpp
   Mydib.cpp
   Skill.cpp
   SoundBuffer.cpp
-  Sprite.cpp
   Compiling...
+  Sprite.cpp
   StrTok.cpp
   Tile.cpp
   TileSpr.cpp
   Wmain.cpp
-C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Wmain.cpp(186,23): warning C4477: 'sprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'HINSTANCE'
+C:\Users\miste\source\repos\HelbreathServer\Client\Wmain.cpp(186,23): warning C4477: 'sprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'HINSTANCE'
   XSocket.cpp
   YWSound.cpp
-     Creating library C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Release\Game.lib and object C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Release\Game.exp
-  Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 595 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-cximage.lib(ximabmp.obj) : warning LNK4099: PDB '' was not found with 'cximage.lib(ximabmp.obj)' or at ''; linking object as if no debug info
-cximage.lib(ximaenc.obj) : warning LNK4099: PDB '' was not found with 'cximage.lib(ximaenc.obj)' or at ''; linking object as if no debug info
-cximage.lib(ximaexif.obj) : warning LNK4099: PDB '' was not found with 'cximage.lib(ximaexif.obj)' or at ''; linking object as if no debug info
-cximage.lib(xImage.obj) : warning LNK4099: PDB '' was not found with 'cximage.lib(xImage.obj)' or at ''; linking object as if no debug info
-cximage.lib(ximainfo.obj) : warning LNK4099: PDB '' was not found with 'cximage.lib(ximainfo.obj)' or at ''; linking object as if no debug info
-cximage.lib(ximajpg.obj) : warning LNK4099: PDB '' was not found with 'cximage.lib(ximajpg.obj)' or at ''; linking object as if no debug info
-cximage.lib(ximapal.obj) : warning LNK4099: PDB '' was not found with 'cximage.lib(ximapal.obj)' or at ''; linking object as if no debug info
-cximage.lib(ximatran.obj) : warning LNK4099: PDB '' was not found with 'cximage.lib(ximatran.obj)' or at ''; linking object as if no debug info
-cximage.lib(xmemfile.obj) : warning LNK4099: PDB '' was not found with 'cximage.lib(xmemfile.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcapimin.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcapimin.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcapistd.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcapistd.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jccoefct.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jccoefct.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jccolor.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jccolor.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcdctmgr.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcdctmgr.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jchuff.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jchuff.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcinit.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcinit.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcmainct.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcmainct.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcmarker.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcmarker.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcmaster.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcmaster.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcomapi.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcomapi.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcparam.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcparam.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcphuff.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcphuff.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcprepct.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcprepct.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jcsample.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jcsample.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdapimin.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdapimin.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdapistd.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdapistd.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdcoefct.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdcoefct.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdcolor.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdcolor.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jddctmgr.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jddctmgr.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdhuff.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdhuff.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdinput.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdinput.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdmainct.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdmainct.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdmarker.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdmarker.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdmaster.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdmaster.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdmerge.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdmerge.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdphuff.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdphuff.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdpostct.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdpostct.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jdsample.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jdsample.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jerror.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jerror.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jfdctflt.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jfdctflt.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jfdctfst.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jfdctfst.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jfdctint.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jfdctint.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jidctflt.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jidctflt.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jidctfst.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jidctfst.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jidctint.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jidctint.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jidctred.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jidctred.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jmemmgr.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jmemmgr.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jmemnobs.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jmemnobs.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jquant1.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jquant1.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jquant2.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jquant2.obj)' or at ''; linking object as if no debug info
-Jpeg.lib(Jutils.obj) : warning LNK4099: PDB '' was not found with 'Jpeg.lib(Jutils.obj)' or at ''; linking object as if no debug info
-  Client.vcxproj -> C:\Users\jccenturion\OneDrive - Axoft Argentina S.A\Desktop\HelbreathServer\Client\Release\Game.exe
+LINK : fatal error LNK1181: cannot open input file 'cximage\release\cximage.lib'

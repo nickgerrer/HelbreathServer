@@ -1,0 +1,63 @@
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj.filters.user
+
+# Build outputs
+Debug/
+Release/
+x64/
+x86/
+[Dd]ebug/
+[Rr]elease/
+
+# Build artifacts
+*.obj
+*.pdb
+*.lib
+*.exp
+*.ilk
+*.map
+*.pch
+*.idb
+*.res
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.rsp
+*.pgc
+*.pgd
+*.meta
+*.tlog/
+*.log
+*.lastbuildstate
+*.iobj
+*.ipdb
+*.recipe
+*.vcxproj.FileListAbsolute.txt
+*.Build.CppClean.log
+unsuccessfulbuild
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk

@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "Client.vcxproj", "{F5807AE3-600C-4037-970B-CD2474F5CF9A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{824C6AED-EBBC-4C2B-B765-2013351DFA7D} = {824C6AED-EBBC-4C2B-B765-2013351DFA7D}
+		{8615CD4F-DEFD-41EF-AB08-9F314626ADEA} = {8615CD4F-DEFD-41EF-AB08-9F314626ADEA}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CxImage", "CxImage\CxImage.vcxproj", "{8615CD4F-DEFD-41EF-AB08-9F314626ADEA}"
 EndProject

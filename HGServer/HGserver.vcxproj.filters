@@ -107,6 +107,8 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="LoginServer.h" />
     <ClInclude Include="PartyManager.h" />
+    <ClInclude Include="Enchanting.h" />
+    <ClInclude Include="MobCounter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BuildItem.cpp">
@@ -184,6 +186,8 @@
     <ClCompile Include="DebugDialog.cpp" />
     <ClCompile Include="LoginServer.cpp" />
     <ClCompile Include="PartyManager.cpp" />
+    <ClCompile Include="Enchanting.cpp" />
+    <ClCompile Include="MobCounter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Winmm.lib">

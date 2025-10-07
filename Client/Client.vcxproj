@@ -31,6 +31,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -63,12 +65,13 @@
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
       <SetChecksum>true</SetChecksum>
-      <AdditionalDependencies>search.lib;wsock32.lib;DINPUT.LIB;DSOUND.LIB;DXGUID.LIB;ddraw.lib;IMM32.LIB;winmm.lib;Cint.lib;cximage/release/cximage.lib;jpeg/release/Jpeg.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>search.lib;wsock32.lib;DINPUT.LIB;DSOUND.LIB;DXGUID.LIB;ddraw.lib;IMM32.LIB;winmm.lib;Cint.lib;CxImage.lib;jpeg/release/Jpeg.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>LIBCMT.lib;LIBC.lib;libcp.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateMapFile>true</GenerateMapFile>
       <AdditionalOptions> /FORCE:UNRESOLVED</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(SolutionDir)CxImage\Release</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
