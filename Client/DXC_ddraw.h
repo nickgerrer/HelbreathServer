@@ -9,68 +9,64 @@
 #pragma once
 #endif // _MSC_VER >= 1000
 
-#include <math.h>
-#include <stdio.h>
 #include <windows.h>
-#include <memory.h>
-#include <string.h>
+#include <cstdint>
 #include "ddraw.h"
-#include "Misc.h"
-#include "GlobalDef.h"
+#include <string>
 
-typedef signed char i8;
-class DXC_ddraw  
+class DXC_ddraw
 {
-public:	
+public:
 	void DrawItemShadowBox(short sX, short sY, short dX, short dY, int iType = 0);
 	bool m_init;
-	void ChangeBPP(i8 bpp);
-	void * operator new (size_t size) 
+	void ChangeBPP(int8_t bpp);
+	void* operator new (size_t size)
 	{
-		return HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, size);	
-	};	
-	void operator delete(void * mem)
+		return HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, size);
+	};
+	void operator delete(void* mem)
 	{
-		HeapFree(GetProcessHeap(), HEAP_NO_SERIALIZE, mem); 		
+		HeapFree(GetProcessHeap(), HEAP_NO_SERIALIZE, mem);
 	};
 
 	DXC_ddraw();
 	virtual ~DXC_ddraw();
-	BOOL bInit(HWND hWnd);
-	void ColorTransferRGB(COLORREF fcolor, int * iR, int * iG, int * iB);
+	bool bInit(HWND hWnd);
+	void ColorTransferRGB(COLORREF fcolor, int* iR, int* iG, int* iB);
 	HRESULT InitFlipToGDI(HWND hWnd);
 	void ChangeDisplayMode(HWND hWnd);
-	void DrawText(LPRECT pRect, const char * pString, COLORREF rgb);
+	void DrawText(LPRECT pRect, const char* pString, COLORREF rgb);
 	void _ReleaseBackBufferDC();
 	void _GetBackBufferDC();
-	void TextOut(int x, int y, char * cStr, COLORREF rgb);
+	void TextOut(int x, int y, char* cStr, COLORREF rgb);
+	SIZE MeasureText(const std::string& text);
 	void _TestPixelFormat();
-	DWORD _dwColorMatch(IDirectDrawSurface7 * pdds4, WORD wColorKey);
-	DWORD _dwColorMatch(IDirectDrawSurface7 * pdds4, COLORREF rgb);
+	DWORD _dwColorMatch(IDirectDrawSurface7* pdds4, WORD wColorKey);
+	DWORD _dwColorMatch(IDirectDrawSurface7* pdds4, COLORREF rgb);
 	long _CalcMinValue(int iS, int iD, char cMode);
 	long _CalcMaxValue(int iS, int iD, char cMode, char cMethod, double dAlpha);
-	HRESULT iSetColorKey(IDirectDrawSurface7 * pdds4, WORD wColorKey);
+	HRESULT iSetColorKey(IDirectDrawSurface7* pdds4, WORD wColorKey);
 	void PutPixel(short sX, short sY, WORD wR, WORD wG, WORD wB);
 	void DrawShadowBox(short sX, short sY, short dX, short dY, int iType = 0);
 	void ClearBackB4();
-	IDirectDrawSurface7 * pCreateOffScreenSurface(WORD iSzX, WORD iSzY);
-	HRESULT iSetColorKey(IDirectDrawSurface7 * pdds4, COLORREF rgb);
+	IDirectDrawSurface7* pCreateOffScreenSurface(WORD iSzX, WORD iSzY);
+	HRESULT iSetColorKey(IDirectDrawSurface7* pdds4, COLORREF rgb);
 	HRESULT iFlip();
 	bool Screenshot(LPCTSTR FileName, LPDIRECTDRAWSURFACE7 lpDDS);
-	
+
 	long    m_lTransG100[64][64], m_lTransRB100[64][64];
 	long    m_lTransG70[64][64], m_lTransRB70[64][64];
 	long    m_lTransG50[64][64], m_lTransRB50[64][64];
 	long    m_lTransG25[64][64], m_lTransRB25[64][64];
 	long    m_lTransG2[64][64], m_lTransRB2[64][64];
-	long    m_lFadeG[64][64],  m_lFadeRB[64][64];
+	long    m_lFadeG[64][64], m_lFadeRB[64][64];
 
-	BOOL m_bFullMode;
+	bool m_bFullMode;
 
 	LPDIRECTDRAW7		 m_lpDD4;
 	LPDIRECTDRAWSURFACE7 m_lpFrontB4, m_lpBackB4, m_lpBackB4flip;
-	LPDIRECTDRAWSURFACE7 m_lpPDBGS;// Pre-Draw Background Surface
-	WORD * m_pBackB4Addr;
+	LPDIRECTDRAWSURFACE7 m_lpPDBGS;
+	WORD* m_pBackB4Addr;
 	RECT  m_rcClipArea, m_rcFlipping;
 	short  m_sBackB4Pitch;
 	char   m_cPixelFormat;
@@ -80,6 +76,11 @@ public:
 	int res_y;
 	int res_x_mid;
 	int res_y_mid;
+
+	GUID m_ddGuid;
+	bool m_hasGuid;
+	HWND m_hWnd;
+	bool SelectAdapterForWindow(HWND hWnd);
 };
 
-#endif // !defined(AFX_DXC_DDRAW_H__C52EBA83_6D9E_11D2_A8E6_00001C7030A6__INCLUDED_)
+#endif

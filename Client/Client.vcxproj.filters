@@ -48,9 +48,6 @@
     <ClInclude Include="Curse.h">
       <Filter>classes</Filter>
     </ClInclude>
-    <ClInclude Include="DXC_ddraw.h">
-      <Filter>classes</Filter>
-    </ClInclude>
     <ClInclude Include="DXC_dinput.h">
       <Filter>classes</Filter>
     </ClInclude>
@@ -116,6 +113,9 @@
     <ClInclude Include="SpriteID.h" />
     <ClInclude Include="Winmain.h" />
     <ClInclude Include="MobCounter.h" />
+    <ClInclude Include="..\..\..\..\Downloads\DXC_ddraw.h">
+      <Filter>classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="YWSound.cpp">

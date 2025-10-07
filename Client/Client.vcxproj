@@ -75,6 +75,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Downloads\DXC_ddraw.h" />
     <ClInclude Include="ActionID.h" />
     <ClInclude Include="BuildItem.h" />
     <ClInclude Include="CharInfo.h" />
@@ -84,7 +85,6 @@
     <ClInclude Include="DDRAW.H" />
     <ClInclude Include="DINPUT.H" />
     <ClInclude Include="DSOUND.H" />
-    <ClInclude Include="DXC_ddraw.h" />
     <ClInclude Include="DXC_dinput.h" />
     <ClInclude Include="DXC_dsound.h" />
     <ClInclude Include="DynamicObjectID.h" />

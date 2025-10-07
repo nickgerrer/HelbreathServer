@@ -60,11 +60,23 @@ int CGameMonitor::iReadBadWordFileList(char *pFn)
 }
 
 BOOL CGameMonitor::bCheckBadWord(char *pWord)
-{int i;
- char cBuffer[500];
+{
+	// Initialize if needed (shouldn't be necessary but...)
+	if (m_pWordList[0] == (class CMsg*)0xCDCDCDCD ||  // uninitialized memory pattern
+		m_pWordList[0] == (class CMsg*)0xFEEEFEEE)    // freed memory pattern
+	{
+		return FALSE;  // Array not initialized
+	}
+
+	if (pWord == NULL) return FALSE;
+ 
+	int i;
+ 
+	char cBuffer[500];
 	ZeroMemory(cBuffer, sizeof(cBuffer));
 	strcpy(cBuffer, pWord);
 	i = 0;
+	
 	while ((m_pWordList[i] != NULL) && (strlen(m_pWordList[i]->m_pMsg) != 0)) 
 	{	if (memcmp(cBuffer, m_pWordList[i]->m_pMsg, strlen(m_pWordList[i]->m_pMsg)) == 0) 
 		{	return TRUE;

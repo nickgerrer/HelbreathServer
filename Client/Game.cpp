@@ -730,14 +730,14 @@ BOOL CGame::bInit(HWND hWnd, HINSTANCE hInst, char * pCmdLine)
 
 
 
-#ifndef _DEBUG
+#ifdef _DEBUG
 	m_pCGameMonitor = new class CGameMonitor;
 	//===============================================
 	// badword.txt
-	if(!m_Misc._iConvertFileXor("contents\\badword.txt", "contents\\badword.tmp", 35))
-	{	MessageBox(m_hWnd, "BADWORD.TXT file contains wrong infomation.","ERROR",MB_ICONEXCLAMATION | MB_OK);
-		return FALSE;
-	}
+	//if(!m_Misc._iConvertFileXor("contents\\badword.txt", "contents\\badword.tmp", 35))
+	//{	MessageBox(m_hWnd, "BADWORD.TXT file contains wrong infomation.","ERROR",MB_ICONEXCLAMATION | MB_OK);
+	//	return FALSE;
+	//}
 	m_pCGameMonitor->iReadBadWordFileList("contents\\badword.tmp");
 	DeleteFile("contents\\badword.tmp");
 
