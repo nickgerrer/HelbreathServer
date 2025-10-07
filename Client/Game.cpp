@@ -1115,7 +1115,7 @@ BOOL CGame::_bCheckMoveable( short sx, short sy )
 	return TRUE;
 }
 
-BOOL CGame::bSendCommand(DWORD dwMsgID, WORD wCommand, char cDir, int iV1, int iV2, int iV3, char * pString, int iV4)
+BOOL CGame::bSendCommand(DWORD dwMsgID, WORD wCommand, char cDir, int iV1, int iV2, int iV3, const char * pString, int iV4)
 {char  * cp, cMsg[300], cTxt[256], cKey;
  WORD  * wp;
  DWORD * dwp, dwTime;
@@ -3342,7 +3342,7 @@ void CGame::UpdateScreen_OnMainMenu()
 	if (m_DDraw.iFlip() == DDERR_SURFACELOST) RestoreSprites();
 }
 
-void CGame::MakeSprite( char* FileName, short sStart, short sCount, bool bAlphaEffect )
+void CGame::MakeSprite( const char* FileName, short sStart, short sCount, bool bAlphaEffect )
 {int iTotalimage;
  DWORD nCount;
  char PathName[28];
@@ -3357,7 +3357,7 @@ void CGame::MakeSprite( char* FileName, short sStart, short sCount, bool bAlphaE
 	CloseHandle(m_hPakFile);
 }
 
-void CGame::MakeTileSpr( char* FileName, short sStart, short sCount, bool bAlphaEffect )
+void CGame::MakeTileSpr( const char* FileName, short sStart, short sCount, bool bAlphaEffect )
 {int iTotalimage;
  DWORD nCount;
  char PathName[28];
@@ -3372,7 +3372,7 @@ void CGame::MakeTileSpr( char* FileName, short sStart, short sCount, bool bAlpha
 	CloseHandle(m_hPakFile);
 }
 
-void CGame::MakeEffectSpr( char* FileName, short sStart, short sCount, bool bAlphaEffect )
+void CGame::MakeEffectSpr( const char* FileName, short sStart, short sCount, bool bAlphaEffect )
 {int iTotalimage;
  DWORD nCount;
  char PathName[28];
@@ -5515,7 +5515,7 @@ void CGame::SetItemCount(char * pItemName, DWORD dwCount)
 }
 
 
-void CGame::AddEventList(char * pTxt, char cColor, BOOL bDupAllow)
+void CGame::AddEventList(const char * pTxt, char cColor, BOOL bDupAllow)
 {int i;
 	if ((bDupAllow == FALSE) && (strcmp(m_stEventHistory[5].cTxt, pTxt) == 0)) return;
 	if (cColor == 10)
@@ -7854,7 +7854,7 @@ static char __cSpace[] = {8,8,8,8,8,8,8,8,8,8, 8,8,8,8,8, 8,6,8,7,8,8,9,10,9,7, 
                           15,16,12,17,14,15,14,16,10,13, 19,10,17,17,15,14,15,16,13,17, 16,16,20,17,16,14,
 	       			      8,8,8,8,8,8,	8,6,7,8,7,7,7,7,4,7,7,  4,11,7,8,8,7,8,6,5,8,9,14,8,9,8, 8,8,8,8,
 				          8,8,8,8,8,8,8};
-void CGame::PutString_SprFont(int iX, int iY, char * pStr, short sR, short sG, short sB)
+void CGame::PutString_SprFont(int iX, int iY, const char * pStr, short sR, short sG, short sB)
 {
  int iXpos;
  DWORD iCnt;
@@ -7876,7 +7876,7 @@ void CGame::PutString_SprFont(int iX, int iY, char * pStr, short sR, short sG, s
 	}
 }
 
-void CGame::PutString_SprFont2(int iX, int iY, char * pStr, short sR, short sG, short sB)
+void CGame::PutString_SprFont2(int iX, int iY, const char * pStr, short sR, short sG, short sB)
 {
  int iXpos, iR, iG, iB;
  DWORD iCnt;
@@ -7902,7 +7902,7 @@ void CGame::PutString_SprFont2(int iX, int iY, char * pStr, short sR, short sG, 
 	}
 }
 
-void CGame::PutString_SprFont3(int iX, int iY, char * pStr, short sR, short sG, short sB, BOOL bTrans, int iType)
+void CGame::PutString_SprFont3(int iX, int iY, const char * pStr, short sR, short sG, short sB, BOOL bTrans, int iType)
 {
  int iXpos, iAdd;
  DWORD iCnt;
@@ -7957,7 +7957,7 @@ void CGame::PutString_SprFont3(int iX, int iY, char * pStr, short sR, short sG, 
 }
 
 static char __cSpace2[] = {6,4,6,6,6,6,6,6,6,6,6}; //{8,6,9,8,8,9,8,8,8,8};
-void CGame::PutString_SprNum(int iX, int iY, char * pStr, short sR, short sG, short sB)
+void CGame::PutString_SprNum(int iX, int iY, const char * pStr, short sR, short sG, short sB)
 {int iXpos;
  unsigned char iCnt;
  DWORD dwTime = G_dwGlobalTime;
@@ -7978,7 +7978,7 @@ void CGame::PutString_SprNum(int iX, int iY, char * pStr, short sR, short sG, sh
 	}	}
 }
 
-void CGame::PutString(int iX, int iY, char * pString, COLORREF color, BOOL bHide, char cBGtype, BOOL bIsPreDC)
+void CGame::PutString(int iX, int iY, const char * pString, COLORREF color, BOOL bHide, char cBGtype, BOOL bIsPreDC)
 {char * pTmp;
  int i;
 	if (strlen(pString) == 0) return;
@@ -8019,14 +8019,14 @@ void CGame::PutString(int iX, int iY, char * pString, COLORREF color, BOOL bHide
 }
 
 
-void CGame::PutString(int iX, int iY, char * pString, COLORREF color)
+void CGame::PutString(int iX, int iY, const char * pString, COLORREF color)
 {
 	m_DDraw._GetBackBufferDC();
 	m_DDraw.TextOut(iX, iY, pString, color);
 	m_DDraw._ReleaseBackBufferDC();
 }
 
-void CGame::PutString2(int iX, int iY, char * pString, short sR, short sG, short sB)
+void CGame::PutString2(int iX, int iY, const char * pString, short sR, short sG, short sB)
 {
 	m_DDraw._GetBackBufferDC();
 	m_DDraw.TextOut(iX+1, iY, pString, RGB(0, 0, 0));
@@ -8036,7 +8036,7 @@ void CGame::PutString2(int iX, int iY, char * pString, short sR, short sG, short
 	m_DDraw._ReleaseBackBufferDC();
 }
 
-void CGame::PutAlignedString(int iX1, int iX2, int iY, char * pString, short sR, short sG, short sB)
+void CGame::PutAlignedString(int iX1, int iX2, int iY, const char * pString, short sR, short sG, short sB)
 {
 	RECT rt;
 	m_DDraw._GetBackBufferDC();
@@ -14303,7 +14303,7 @@ BOOL CGame::bReadIp()
 	return TRUE;
 }
 
-BOOL CGame::bReadLoginConfigFile(char * cFn)
+BOOL CGame::bReadLoginConfigFile(const char * cFn)
 {FILE * pFile;
  HANDLE hFile;
  DWORD  dwFileSize;
@@ -17911,7 +17911,7 @@ void CGame::DlgBoxClick_CrusadeJob(short msX, short msY)
 	}
 }
 
-void CGame::_RequestMapStatus(char * pMapName, int iMode)
+void CGame::_RequestMapStatus(const char * pMapName, int iMode)
 {
 	bSendCommand(MSGID_COMMAND_COMMON, DEF_COMMONTYPE_REQUEST_MAPSTATUS, NULL, iMode, NULL, NULL, pMapName);
 }
@@ -18525,7 +18525,7 @@ void CGame::DrawObjectFOE(int ix, int iy, int iFrame)
 	}
 }
 
-void CGame::SetTopMsg(char *pString, unsigned char iLastSec)
+void CGame::SetTopMsg(const char *pString, unsigned char iLastSec)
 {
 	ZeroMemory(m_cTopMsg, sizeof(m_cTopMsg));
 	strcpy(m_cTopMsg, pString);
@@ -29678,7 +29678,7 @@ char CGame::GetOfficialMapName(char * pMapName, char * pName)
 	}
 }
 
-BOOL CGame::bCheckLocalChatCommand(char * pMsg)
+BOOL CGame::bCheckLocalChatCommand(const char * pMsg)
 {class  CStrTok * pStrTok = NULL;
  char   * token, cBuff[256], cTxt[120], cName[12], cTemp[120];
  char   seps[] = " \t\n";
@@ -43333,7 +43333,7 @@ void CGame::Abaddon_corpse(int sX, int sY)
 **  void DebugLog(char * cStr)			( Snoopy )																	**
 **  description			: writes data into "Debug.txt"																**
 **********************************************************************************************************************/
-void CGame::DebugLog(char * cStr)
+void CGame::DebugLog(const char * cStr)
 {FILE * pFile;
  char cBuffer[512];
  SYSTEMTIME SysTime;
@@ -44075,7 +44075,7 @@ bool CGame::CheckValidFragment(DWORD dwType)
 	return false;
 }
 
-char* CGame::GetShardName(DWORD dwType)
+const char* CGame::GetShardName(DWORD dwType)
 {
 	switch (dwType) {
 	case SHARD_CRITICAL:
@@ -44105,7 +44105,7 @@ char* CGame::GetShardName(DWORD dwType)
 	return "";
 }
 
-char* CGame::GetFragmentName(DWORD dwType)
+const char* CGame::GetFragmentName(DWORD dwType)
 {
 	switch (dwType) {
 	case FRAGMENT_PSNRES:
@@ -44137,7 +44137,7 @@ char* CGame::GetFragmentName(DWORD dwType)
 	return "";
 }
 
-char* CGame::GetShardDesc(DWORD dwType)
+const char* CGame::GetShardDesc(DWORD dwType)
 {
 	switch (dwType) {
 	case SHARD_CRITICAL:
@@ -44166,7 +44166,7 @@ char* CGame::GetShardDesc(DWORD dwType)
 	return "";
 }
 
-char* CGame::GetFragmentDesc(DWORD dwType)
+const char* CGame::GetFragmentDesc(DWORD dwType)
 {
 	switch (dwType) {
 	case FRAGMENT_PSNRES:

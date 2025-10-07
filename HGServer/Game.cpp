@@ -9638,6 +9638,7 @@ void CGame::ChatMsgHandler(int iClientH, char * pData, DWORD dwMsgSize)
 		}
 
 		if (memcmp(cp, "/summon ", 8) == 0) {
+			PutLogList("Admin used /summon command");
 			AdminOrder_Summon(iClientH, cp, dwMsgSize - 21);
 			return;
 		}

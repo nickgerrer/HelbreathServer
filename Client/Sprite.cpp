@@ -19,7 +19,7 @@ extern long    G_lTransG2[64][64], G_lTransRB2[64][64];
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-CSprite::CSprite(HANDLE hPakFile, DXC_ddraw *pDDraw, char *cPakFileName, short sNthFile, bool bAlphaEffect)
+CSprite::CSprite(HANDLE hPakFile, DXC_ddraw *pDDraw, const char *cPakFileName, short sNthFile, bool bAlphaEffect)
 {
 	DWORD  nCount;
 	int iASDstart;

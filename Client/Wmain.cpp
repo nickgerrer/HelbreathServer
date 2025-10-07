@@ -19,7 +19,7 @@
 #include "Game.h"
 #include "GlobalDef.h"
 
-extern "C" __declspec( dllimport) int __FindHackingDll__(char *);
+extern "C" __declspec( dllimport) int __FindHackingDll__(const char *);
 
 // --------------------------------------------------------------
 
@@ -172,7 +172,7 @@ int APIENTRY WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	HINSTANCE hRichDll = LoadLibrary( "Riched20.dll" );
 #endif
 
-	typedef int (MYPROC)(char *) ;
+	typedef int (MYPROC)(const char *) ;
 	MYPROC *pFindHook; 
 	pFindHook = (MYPROC *) GetProcAddress(hDll, "__FindHackingDll__") ;
 

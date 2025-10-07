@@ -24,7 +24,7 @@ CGameMonitor::~CGameMonitor()
 	if (m_pWordList[i] != NULL) delete m_pWordList[i];
 }
 
-int CGameMonitor::iReadBadWordFileList(char *pFn)
+int CGameMonitor::iReadBadWordFileList(const char *pFn)
 {char * pContents, * token;
  char seps[] = "/,\t\n";
  char cReadMode = 0;
@@ -59,7 +59,7 @@ int CGameMonitor::iReadBadWordFileList(char *pFn)
 	return iIndex;
 }
 
-BOOL CGameMonitor::bCheckBadWord(char *pWord)
+BOOL CGameMonitor::bCheckBadWord(const char *pWord)
 {
 	// Initialize if needed (shouldn't be necessary but...)
 	if (m_pWordList[0] == (class CMsg*)0xCDCDCDCD ||  // uninitialized memory pattern

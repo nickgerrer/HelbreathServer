@@ -40,7 +40,7 @@ public:
 	{	HeapFree(GetProcessHeap(), HEAP_NO_SERIALIZE, mem);
 	};
 
-	CSprite(HANDLE hPakFile, class DXC_ddraw * pDDraw, char * cPakFileName, short sNthFile, bool bAlphaEffect = TRUE);
+	CSprite(HANDLE hPakFile, class DXC_ddraw * pDDraw, const char * cPakFileName, short sNthFile, bool bAlphaEffect = TRUE);
 	virtual ~CSprite();
 
 	void PutSpriteRGB(int sX, int sY, int sFrame, int sRed, int sGreen, int sBlue, DWORD dwTime);

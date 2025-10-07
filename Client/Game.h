@@ -278,10 +278,10 @@ public:
 	void DrawDialogBox_EnchantingBag(int msX, int msY);
 	void DlgBoxClick_EnchantingBag(int msX, int msY);
 
-	char* GetFragmentDesc(DWORD dwType);
-	char* GetShardDesc(DWORD dwType);
-	char* GetFragmentName(DWORD dwType);
-	char* GetShardName(DWORD dwType);
+	const char* GetFragmentDesc(DWORD dwType);
+	const char* GetShardDesc(DWORD dwType);
+	const char* GetFragmentName(DWORD dwType);
+	const char* GetShardName(DWORD dwType);
 
 	bool CheckValidFragment(DWORD dwType);
 	bool CheckValidShard(DWORD dwType);
@@ -330,14 +330,14 @@ public:
 	void CrusadeContributionResult(int iWarContribution);
 	void CannotConstruct(int iCode);
 	void DrawTopMsg();
-	void SetTopMsg(char * pString, unsigned char iLastSec);
+	void SetTopMsg(const char * pString, unsigned char iLastSec);
 	void DrawObjectFOE(int ix, int iy, int iFrame);
 	void GrandMagicResult(char * pMapName, int iV1, int iV2, int iV3, int iV4, int iHP1, int iHP2, int iHP3, int iHP4) ;
 	void MeteorStrikeComing(int iCode);
 	void _Draw_OnLogin(char * pAccount, char * pPassword, int msX, int msY, int iFrame = 60000);
 	void DrawNewDialogBox(char cType, int sX, int sY, int iFrame, BOOL bIsNoColorKey = FALSE, BOOL bIsTrans = FALSE);
 	void AddMapStatusInfo(char * pData, BOOL bIsLastData);
-	void _RequestMapStatus(char * pMapName, int iMode);
+	void _RequestMapStatus(const char * pMapName, int iMode);
 	int  GetCharKind(char *str, int index);
 	void ReceiveString(char * pString);
 	void EndInputString();
@@ -534,9 +534,9 @@ public:
 	void UpdateScreen_OnGame();
 	void UpdateScreen_OnConnecting();
 	void UpdateScreen_OnWaitInitData();
-	void MakeSprite( char* FileName, short sStart, short sCount, bool bAlphaEffect = TRUE);
-	void MakeTileSpr( char* FileName, short sStart, short sCount, bool bAlphaEffect = TRUE);
-	void MakeEffectSpr( char* FileName, short sStart, short sCount, bool bAlphaEffect = TRUE);
+	void MakeSprite( const char* FileName, short sStart, short sCount, bool bAlphaEffect = TRUE);
+	void MakeTileSpr( const char* FileName, short sStart, short sCount, bool bAlphaEffect = TRUE);
+	void MakeEffectSpr( const char* FileName, short sStart, short sCount, bool bAlphaEffect = TRUE);
 	void UpdateScreen_OnLoading(bool bActive);
 	void UpdateScreen_OnConnectionLost();
 	void UpdateScreen_OnLogin();
@@ -567,7 +567,7 @@ public:
 	void WhetherObjectFrameCounter();
 	void DrawWhetherEffects();
 	BOOL bCheckExID(char * pName);
-	BOOL bCheckLocalChatCommand(char * pMsg);
+	BOOL bCheckLocalChatCommand(const char * pMsg);
 	char GetOfficialMapName(char * pMapName, char * pName);
 	DWORD iGetLevelExp(int iLevel);
 	int _iCalcTotalWeight();
@@ -608,7 +608,7 @@ public:
 	void PointCommandHandler(int indexX, int indexY, char cItemID = -1);
 	void DrawEffects();
 	void bAddNewEffect(short sType, int sX, int sY, int dX, int dY, char cStartFrame, int iV1 = 1);
-	void AddEventList(char * pTxt, char cColor = 0, BOOL bDupAllow = TRUE);
+	void AddEventList(const char * pTxt, char cColor = 0, BOOL bDupAllow = TRUE);
 	void ShowEventList(DWORD dwTime);
 	void SetItemCount(char * pItemName, DWORD dwCount);
 	void _ShiftGuildOperationList();
@@ -651,14 +651,14 @@ public:
 	void OnSysKeyDown(WPARAM wParam);
 	void OnSysKeyUp(WPARAM wParam);
 	void ChangeGameMode(char cMode);
-	void PutString(int iX, int iY, char * pString, COLORREF color);
-	void PutString(int iX, int iY, char * pString, COLORREF color, BOOL bHide, char cBGtype, BOOL bIsPreDC = FALSE);
-	void PutString2(int iX, int iY, char * pString, short sR, short sG, short sB);
-	void PutAlignedString(int iX1, int iX2, int iY, char * pString, short sR = 0, short sG = 0, short sB = 0);
-	void PutString_SprFont(int iX, int iY, char * pStr, short sR, short sG, short sB);
-	void PutString_SprFont2(int iX, int iY, char * pStr, short sR, short sG, short sB);
-	void PutString_SprFont3(int iX, int iY, char * pStr, short sR, short sG, short sB, BOOL bTrans = FALSE, int iType = 0);
-	void PutString_SprNum(int iX, int iY, char * pStr, short sR, short sG, short sB);
+	void PutString(int iX, int iY, const char * pString, COLORREF color);
+	void PutString(int iX, int iY, const char * pString, COLORREF color, BOOL bHide, char cBGtype, BOOL bIsPreDC = FALSE);
+	void PutString2(int iX, int iY, const char * pString, short sR, short sG, short sB);
+	void PutAlignedString(int iX1, int iX2, int iY, const char * pString, short sR = 0, short sG = 0, short sB = 0);
+	void PutString_SprFont(int iX, int iY, const char * pStr, short sR, short sG, short sB);
+	void PutString_SprFont2(int iX, int iY, const char * pStr, short sR, short sG, short sB);
+	void PutString_SprFont3(int iX, int iY, const char * pStr, short sR, short sG, short sB, BOOL bTrans = FALSE, int iType = 0);
+	void PutString_SprNum(int iX, int iY, const char * pStr, short sR, short sG, short sB);
 	void LogRecvMsgHandler(char * pData);
 	void LogResponseHandler(char * pData);
 	void OnLogSocketEvent(WPARAM wParam, LPARAM lParam);
@@ -672,7 +672,7 @@ public:
 	void MotionResponseHandler(char * pData);
 	void GameRecvMsgHandler(DWORD dwMsgSize, char * pData);
 	void DrawObjects(short sPivotX, short sPivotY, short sDivX, short sDivY, short sModX, short sModY, short msX, short msY);
-	BOOL bSendCommand(DWORD dwMsgID, WORD wCommand, char cDir, int iV1, int iV2, int iV3, char * pString, int iV4 = NULL); // v1.4
+	BOOL bSendCommand(DWORD dwMsgID, WORD wCommand, char cDir, int iV1, int iV2, int iV3, const char * pString, int iV4 = NULL); // v1.4
 	char cGetNextMoveDir(short sX, short sY, short dstX, short dstY, BOOL bMoveCheck = FALSE, BOOL bMIM = FALSE);
 	void RestoreSprites();
 	void CommandProcessor(short msX, short msY, short indexX, short indexY, char cLB, char cRB);
@@ -692,8 +692,8 @@ public:
 	void StartBGM();
 
 	//Snoopy: added function:
-	void DebugLog(char * cStr);
-	BOOL bReadLoginConfigFile(char * cFn);
+	void DebugLog(const char * cStr);
+	BOOL bReadLoginConfigFile(const char * cFn);
 	int bHasHeroSet( short Appr3, short Appr4, char OwnerType);
 	void ShowHeldenianVictory(short sSide);
 	void DrawDialogBox_Resurect(short msX, short msY);

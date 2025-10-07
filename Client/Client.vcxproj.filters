@@ -113,7 +113,7 @@
     <ClInclude Include="SpriteID.h" />
     <ClInclude Include="Winmain.h" />
     <ClInclude Include="MobCounter.h" />
-    <ClInclude Include="..\..\..\..\Downloads\DXC_ddraw.h">
+    <ClInclude Include="DXC_ddraw.h">
       <Filter>classes</Filter>
     </ClInclude>
   </ItemGroup>

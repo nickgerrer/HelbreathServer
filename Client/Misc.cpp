@@ -111,7 +111,7 @@ void CMisc::GetDirPoint(char cDir, int * pX, int * pY)
 	}
 }
 
-BOOL CMisc::bCheckValidString(char * str)
+BOOL CMisc::bCheckValidString(const char * str)
 {	int len = strlen(str);
 	for (int i = 0; i < len; i++)
 	{	if(str[i] == ' ') return FALSE;
@@ -119,7 +119,7 @@ BOOL CMisc::bCheckValidString(char * str)
 	return TRUE;
 }
 
-BOOL CMisc::bCheckIMEString(char * str)
+BOOL CMisc::bCheckIMEString(const char * str)
 {	int len = strlen(str);
 	for (int i = 0; i < len; i++)
 	{	if(str[i] < 0) return FALSE;
@@ -234,7 +234,7 @@ BOOL CMisc::bDecode(char cKey, char *pStr)
 }
 
 
-BOOL CMisc::bCheckValidName(char *pStr)
+BOOL CMisc::bCheckValidName(const char *pStr)
 {int i, iLen;
  iLen = strlen(pStr);
 	for (i = 0; i < iLen; i++)
@@ -251,7 +251,7 @@ BOOL CMisc::bCheckValidName(char *pStr)
 }
 
 
-int CMisc::_iGetFileCheckSum(char * pFn)
+int CMisc::_iGetFileCheckSum(const char * pFn)
 {	HANDLE hFile;
 	FILE * pFile;
 	DWORD  dwFileSize;
@@ -292,7 +292,7 @@ int CMisc::_iGetFileCheckSum(char * pFn)
 	return abs(iCheckSum);
 }
 
-BOOL CMisc::_iConvertFileXor(char *pFn, char * pDestFn, char cKey)
+BOOL CMisc::_iConvertFileXor(const char *pFn, const char * pDestFn, char cKey)
 {
  HANDLE hFile;
  DWORD  dwFileSize;
@@ -338,7 +338,7 @@ BOOL CMisc::_iConvertFileXor(char *pFn, char * pDestFn, char cKey)
 	return TRUE;
 }
 
-int CMisc::iGetTextLengthLoc(HDC hDC, char *pStr, int iLength)
+int CMisc::iGetTextLengthLoc(HDC hDC, const char *pStr, int iLength)
 {
  int i;
  BOOL bFlag;
@@ -357,7 +357,7 @@ int CMisc::iGetTextLengthLoc(HDC hDC, char *pStr, int iLength)
 }
 
 
-BOOL CMisc::bIsValidSSN(char *pStr)
+BOOL CMisc::bIsValidSSN(const char *pStr)
 {int a, b, c, d, e, f, g, h, i, j, k, l, m, X, Y;
 	if (strlen(pStr) < 14) return FALSE;
 	a = pStr[0] - 48;
@@ -381,7 +381,7 @@ BOOL CMisc::bIsValidSSN(char *pStr)
 	return TRUE;
 }
 
-BOOL CMisc::bIsValidEmail(char *pStr)
+BOOL CMisc::bIsValidEmail(const char *pStr)
 {
 	int len = strlen( pStr );
 	if( len < 7 ) return FALSE;

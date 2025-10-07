@@ -19,22 +19,22 @@ class CMisc
 {
 public:
 	
-	int iGetTextLengthLoc(HDC hDC, char * pStr, int iLength);
-	int  _iGetFileCheckSum(char * pFn);
-	BOOL _iConvertFileXor(char *pFn, char *pDestFn, char cKey);
-	BOOL bCheckValidName(char *pStr);
-	BOOL bCheckIMEString(char *str);
+	int iGetTextLengthLoc(HDC hDC, const char * pStr, int iLength);
+	int  _iGetFileCheckSum(const char * pFn);
+	BOOL _iConvertFileXor(const char *pFn, const char *pDestFn, char cKey);
+	BOOL bCheckValidName(const char *pStr);
+	BOOL bCheckIMEString(const char *str);
 	BOOL bDecode(char cKey, char * pStr);
 	BOOL bEncode(char cKey, char * pStr);
 	void ColorTransfer(char cPixelFormat, COLORREF fcolor, WORD * wR, WORD * wG, WORD * wB);
 	char cCalcDirection(short sX, short sY, short dX, short dY);
 	void ReplaceString(char * pStr, char cFrom, char cTo);
-	BOOL bCheckValidString(char * str);
+	BOOL bCheckValidString(const char * str);
 	void GetDirPoint(char cDir, int * pX, int * pY);
 	void GetPoint(int x0, int y0, int x1, int y1, int * pX, int * pY, int * pError, int iCount);
 	char cGetNextMoveDir(short sX, short sY, short dX, short dY);
-	BOOL bIsValidSSN(char * pStr);
-	BOOL bIsValidEmail(char * pStr);
+	BOOL bIsValidSSN(const char * pStr);
+	BOOL bIsValidEmail(const char * pStr);
 	CMisc();
 	virtual ~CMisc();
 };

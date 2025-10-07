@@ -23,8 +23,8 @@
 class CGameMonitor  
 {
 public:
-	BOOL bCheckBadWord(char * pWord);
-	int iReadBadWordFileList(char * pFn);
+	BOOL bCheckBadWord(const char * pWord);
+	int iReadBadWordFileList(const char * pFn);
 	CGameMonitor();
 	virtual ~CGameMonitor();
 

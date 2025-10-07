@@ -520,7 +520,7 @@ DWORD DXC_ddraw::_dwColorMatch(IDirectDrawSurface7* pdds4, WORD wColorKey)
 	return dw;
 }
 
-void DXC_ddraw::TextOut(int x, int y, char* cStr, COLORREF rgb)
+void DXC_ddraw::TextOut(int x, int y, const char* cStr, COLORREF rgb)
 {
 	SetTextColor(m_hDC, rgb);
 	::TextOut(m_hDC, x, y, cStr, strlen(cStr));
