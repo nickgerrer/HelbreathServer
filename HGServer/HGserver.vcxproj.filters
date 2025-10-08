@@ -109,6 +109,9 @@
     <ClInclude Include="PartyManager.h" />
     <ClInclude Include="Enchanting.h" />
     <ClInclude Include="MobCounter.h" />
+    <ClInclude Include="TempNpcItem.h">
+      <Filter>source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BuildItem.cpp">
@@ -188,6 +191,9 @@
     <ClCompile Include="PartyManager.cpp" />
     <ClCompile Include="Enchanting.cpp" />
     <ClCompile Include="MobCounter.cpp" />
+    <ClCompile Include="TempNpcItem.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Winmm.lib">

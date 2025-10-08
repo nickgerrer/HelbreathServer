@@ -128,7 +128,7 @@ public:
 
 	int m_iAddTransMana, m_iAddChargeCritical;
 
-	string getvalue(string val, char* fileName);
+	string getvalue(string val, const char* fileName);
 
 	CEnchanting* m_pShards[13][17];
 	CEnchanting* m_pFragments[13][17];

@@ -7,12 +7,12 @@
 
 class CDebugWindow *DbgWnd;
 
-extern void PutLogList(char * cMsg);
+extern void PutLogList(const char * cMsg);
 extern char G_cTxt[512];
 extern char	G_cData50000[50000];
 
-extern void PutLogFileList(char * cStr);
-extern void PutAdminLogFileList(char * cStr);
+extern void PutLogFileList(const char * cStr);
+extern void PutAdminLogFileList(const char * cStr);
 extern void PutItemLogFileList(char * cStr);
 extern void PutLogEventFileList(char * cStr);
 extern void PutHackLogFileList(char * cStr);
@@ -970,9 +970,10 @@ void CGame::DisplayInfo(HDC hdc)
 	}
 }
 
-void CGame::GayDave(char cDave[350], char cInput[350])
+void CGame::GayDave(char cDave[350], const char cInput[350])
 {
- char * pDisplay, * wdap, * pInput;
+	char* pDisplay, * wdap;
+	const char *pInput;
 	pInput = cInput;
 	pDisplay = cDave;
 
@@ -2327,7 +2328,7 @@ void CGame::RequestMobKills(int client)
 	player->m_pXSock->iSendMsg(G_cData50000, cp - G_cData50000);//mandarle la data a p que es el cliente
 }
 
-BOOL CGame::bSendClientConfig(int iClientH, char* cFile)
+BOOL CGame::bSendClientConfig(int iClientH, const char* cFile)
 {
 	DWORD* dwp, lpNumberOfBytesRead;
 	WORD* wp;
@@ -4970,7 +4971,7 @@ void CGame::GameProcess()
 	DelayEventProcess();
 }
 
-BOOL CGame::bReadProgramConfigFile(char * cFn, bool ismaps)
+BOOL CGame::bReadProgramConfigFile(const char * cFn, bool ismaps)
 {
 	FILE * pFile;
 	HANDLE hFile;
@@ -5202,7 +5203,7 @@ BOOL CGame::bReadProgramConfigFile(char * cFn, bool ismaps)
 	return TRUE;
 }
 
-BOOL CGame::bReadSettingsConfigFile(char * cFn) 
+BOOL CGame::bReadSettingsConfigFile(const char * cFn) 
 { 
    FILE * pFile; 
    HANDLE hFile; 
@@ -5493,7 +5494,7 @@ BOOL CGame::bReadSettingsConfigFile(char * cFn)
 } 
  
 
-BOOL CGame::bReadCrusadeStructureConfigFile(char * cFn)
+BOOL CGame::bReadCrusadeStructureConfigFile(const char * cFn)
 {
  FILE * pFile;
  HANDLE hFile;
@@ -8137,7 +8138,7 @@ int CGame::_iComposePlayerDataFileContents(int iClientH, char * pData)
 	return strlen(pData);
 }
 
-BOOL CGame::_bDecodeItemConfigFileContents(char * pData, DWORD dwMsgSize)
+BOOL CGame::_bDecodeItemConfigFileContents(const char * pData, DWORD dwMsgSize)
 {
  char * pContents, * token, cTxt[120];
  char seps[] = "= \t\n";
@@ -8520,7 +8521,7 @@ DICFC_STOPDECODING:
 }
 
 
-BOOL CGame::_bInitItemAttr(class CItem * pItem, char * pItemName)
+BOOL CGame::_bInitItemAttr(class CItem * pItem, const char * pItemName)
 {
  register int i;
  char cTmpName[21];
@@ -8646,7 +8647,7 @@ NEXT_STEP_SNFM2:
 }
 
 
-int CGame::bCreateNewNpc(char * pNpcName, char * pName, char * pMapName, short sClass, char cSA, char cMoveType, int * poX, int * poY, char * pWaypointList, RECT * pArea, int iSpotMobIndex, char cChangeSide, BOOL bHideGenMode, BOOL bIsSummoned, BOOL bFirmBerserk, BOOL bIsMaster, int iGuildGUID)
+int CGame::bCreateNewNpc(const char * pNpcName, char * pName, char * pMapName, short sClass, char cSA, char cMoveType, int * poX, int * poY, char * pWaypointList, RECT * pArea, int iSpotMobIndex, char cChangeSide, BOOL bHideGenMode, BOOL bIsSummoned, BOOL bFirmBerserk, BOOL bIsMaster, int iGuildGUID)
 {
  register int i, t, j, k, iMapIndex;
  char  cTmpName[11], cTxt[120];
@@ -14266,7 +14267,7 @@ REMOVE_ITEM_PROCEDURE:
 	iCalcTotalWeight(iClientH);
 }
 
-void CGame::SendNotifyMsg(int iFromH, int iToH, WORD wMsgType, DWORD sV1, DWORD sV2, DWORD sV3, char * pString, DWORD sV4, DWORD sV5, DWORD sV6, DWORD sV7, DWORD sV8, DWORD sV9, char * pString2)
+void CGame::SendNotifyMsg(int iFromH, int iToH, WORD wMsgType, DWORD sV1, DWORD sV2, DWORD sV3, const char * pString, DWORD sV4, DWORD sV5, DWORD sV6, DWORD sV7, DWORD sV8, DWORD sV9, char * pString2)
 {
  char cData[1000];
  DWORD * dwp;
@@ -15889,7 +15890,7 @@ void CGame::DismissGuildRejectHandler(int iClientH, char * pName)
 }
 
 
-DWORD CGame::dwGetItemCount(int iClientH, char * pName)
+DWORD CGame::dwGetItemCount(int iClientH, const char * pName)
 {
  register int i;
  char cTmpName[21];
@@ -15908,7 +15909,7 @@ DWORD CGame::dwGetItemCount(int iClientH, char * pName)
 	return 0;
 }
 
-int CGame::SetItemCount(int iClientH, char * pItemName, DWORD dwCount)
+int CGame::SetItemCount(int iClientH, const char * pItemName, DWORD dwCount)
 {
  register int i;
  char cTmpName[21];
@@ -16441,7 +16442,7 @@ void CGame::ReleaseItemHandler(int iClientH, short sItemIndex, BOOL bNotice)
 }
 
 
-BOOL CGame::_bDecodeNpcConfigFileContents(char * pData, DWORD dwMsgSize)
+BOOL CGame::_bDecodeNpcConfigFileContents(const char * pData, DWORD dwMsgSize)
 {
  char * pContents, * token, cTxt[120];
  char seps[] = "= \t\n";
@@ -16852,7 +16853,7 @@ BOOL CGame::_bDecodeNpcConfigFileContents(char * pData, DWORD dwMsgSize)
 	return TRUE;
 }
 
-BOOL CGame::_bInitNpcAttr(class CNpc * pNpc, char * pNpcName, short sClass, char cSA)
+BOOL CGame::_bInitNpcAttr(class CNpc * pNpc, const char * pNpcName, short sClass, char cSA)
 {
  register int i, iTemp;
  char cTmpName[21];
@@ -20489,7 +20490,7 @@ NMH_NOEFFECT:
 
 }
 
-void CGame::RequestTeleportHandler(int iClientH, char * pData, char * cMapName, int dX, int dY)
+void CGame::RequestTeleportHandler(int iClientH, const char * pData, const char * cMapName, int dX, int dY)
 {
 	char  * pBuffer, cTempMapName[21];
 	DWORD * dwp;
@@ -21124,7 +21125,7 @@ void CGame::ReleaseFollowMode(short sOwnerH, char cOwnerType)
 	}
 }
 
-BOOL CGame::_bDecodeMagicConfigFileContents(char * pData, DWORD dwMsgSize)
+BOOL CGame::_bDecodeMagicConfigFileContents(const char * pData, DWORD dwMsgSize)
 {
  char * pContents, * token, cTxt[120];
  char seps[] = "= \t\n";
@@ -21453,7 +21454,7 @@ BOOL CGame::_bDecodeMagicConfigFileContents(char * pData, DWORD dwMsgSize)
 
 
 
-BOOL CGame::_bDecodeSkillConfigFileContents(char * pData, DWORD dwMsgSize)
+BOOL CGame::_bDecodeSkillConfigFileContents(const char * pData, DWORD dwMsgSize)
 {
  char * pContents, * token, cTxt[120];
  char seps[] = "= \t\n";
@@ -33356,7 +33357,7 @@ void CGame::SetPlayerReputation(int iClientH, char * pMsg, char cValue, DWORD dw
 	return;
 }
 
-BOOL CGame::bReadNotifyMsgListFile(char * cFn)
+BOOL CGame::bReadNotifyMsgListFile(const char * cFn)
 {
  FILE * pFile;
  HANDLE hFile;
@@ -33624,7 +33625,8 @@ void CGame::AdminOrder_CallGuard(int iClientH, char * pData, DWORD dwMsgSize)
 void CGame::AdminOrder_Kill(int iClientH, char * pData, DWORD dwMsgSize)
 {
 	char   seps[] = "= \t\n";
-	char   * token, cName[11], cTargetName[11], cBuff[256], cNpcName[21], cNpcWaypoint[11];
+	const char* token;
+	char cName[11], cTargetName[11], cBuff[256], cNpcName[21], cNpcWaypoint[11];
 	class  CStrTok * pStrTok;
 	register int i;
 	int sAttackerWeapon, sDamage, iExH;
@@ -36064,7 +36066,7 @@ RCPH_LOOPBREAK:;
 //////////////////////////////////////////////////////////////////////////////////////////
 ///		Snoopy: Added Crafting to the same file than potions
 //////////////////////////////////////////////////////////////////////////////////////////
-BOOL CGame::_bDecodePortionConfigFileContents(char* pData, DWORD dwMsgSize)
+BOOL CGame::_bDecodePortionConfigFileContents(const char* pData, DWORD dwMsgSize)
 {
 	char* pContents, * token, cTxt[120];
 	char seps[] = "= \t\n";
@@ -39057,7 +39059,7 @@ int CGame::_iTalkToNpcResult_Guard(int iClientH, int * pQuestType, int * pMode, 
 }
 
 
-BOOL CGame::_bDecodeQuestConfigFileContents(char * pData, DWORD dwMsgSize)
+BOOL CGame::_bDecodeQuestConfigFileContents(const char * pData, DWORD dwMsgSize)
 {
  char * pContents, * token, cTxt[120];
  char seps[] = "= \t\n";
@@ -40098,7 +40100,7 @@ BOOL CGame::_bCheckSubLogSocketIndex()
 	return TRUE;
 }
 
-BOOL CGame::_bDecodeBuildItemConfigFileContents(char *pData, DWORD dwMsgSize)
+BOOL CGame::_bDecodeBuildItemConfigFileContents(const char *pData, DWORD dwMsgSize)
 {
  char * pContents, * token, cTxt[120];
  char seps[] = "= \t\n";
@@ -41229,7 +41231,7 @@ void CGame::AdminOrder_DisconnectAll(int iClientH, char *pData, DWORD dwMsgSize)
 	_iForcePlayerDisconect(DEF_MAXCLIENTS);
 }
 
-BOOL CGame::_bDecodeDupItemIDFileContents(char *pData, DWORD dwMsgSize)
+BOOL CGame::_bDecodeDupItemIDFileContents(const char *pData, DWORD dwMsgSize)
 {
  char * pContents, * token, cTxt[120];
  char seps[] = "= \t\n";
@@ -44569,7 +44571,7 @@ void CGame::_CreateCrusadeGUID(DWORD dwCrusadeGUID, int iWinnerSide)
 }
 
 
-BOOL CGame::bReadCrusadeGUIDFile(char * cFn)
+BOOL CGame::bReadCrusadeGUIDFile(const char * cFn)
 {
  FILE * pFile;
  HANDLE hFile;
@@ -46279,7 +46281,7 @@ void CGame::RemoveCrusadeRecallTime(void)
 }
 
 // New 13/05/2004
-BOOL CGame::_bCrusadeLog(int iAction,int iClientH,int iData, char * cName)
+BOOL CGame::_bCrusadeLog(int iAction,int iClientH,int iData, const char * cName)
 {
 	char  cTxt[200];
 
@@ -47171,7 +47173,7 @@ if ((dwTime - m_dwGameTime2) > 1000) {
 	}
 }
 
-BOOL CGame::bReadScheduleConfigFile(char *pFn)
+BOOL CGame::bReadScheduleConfigFile(const char *pFn)
 {
  FILE * pFile;
  HANDLE hFile;
@@ -47554,7 +47556,7 @@ void CGame::GSM_SetGuildTeleportLoc(int iGuildGUID, int dX, int dY, char * pMapN
 }
 
 
-void CGame::RequestSetGuildTeleportLocHandler(int iClientH, int dX, int dY, int iGuildGUID, char * pMapName)
+void CGame::RequestSetGuildTeleportLocHandler(int iClientH, int dX, int dY, int iGuildGUID, const char * pMapName)
 {
  char * cp, cData[120];
  register int i;
@@ -49020,7 +49022,7 @@ void CGame::NpcDeadItemGenerator(int iNpcH, short sAttackerH, char cAttackerType
 	}
 }
 
-BOOL CGame::bReadAdminSetConfigFile(char * cFn)
+BOOL CGame::bReadAdminSetConfigFile(const char * cFn)
 {
 	FILE * pFile;
 	HANDLE hFile;
@@ -49642,7 +49644,8 @@ void CGame::AdminOrder_CheckRep(int iClientH, char *pData,DWORD dwMsgSize)
 {
  class  CStrTok * pStrTok;
  short m_iRating;
- char   * token, cName[11], cTargetName[11], cRepMessage[256], cTemp[256], seps[] = "= \t\n", cBuff[256];
+ const char* token;
+ char cName[11], cTargetName[11], cRepMessage[256], cTemp[256], seps[] = "= \t\n", cBuff[256];
  register int i;
 
 	if (m_pClientList[iClientH] == NULL) return;
@@ -49704,7 +49707,8 @@ void CGame::AdminOrder_Pushplayer(int iClientH, char * pData, DWORD dwMsgSize)
 	//Teleports a Defined Player to Defined Destination
 	// /push playername mapname sX dX
  char   seps[] = "= \t\n";
- char   * token, cBuff[256], cMapName[256], cName[11], cTargetName[11];
+ const char* token;
+ char cBuff[256], cMapName[256], cName[11], cTargetName[11];
  class  CStrTok * pStrTok;
  register int dX, dY;
  register int i;
@@ -50262,7 +50266,8 @@ void CGame::AdminOrder_CheckStats(int iClientH, char *pData,DWORD dwMsgSize)
  char   seps[] = "= \t\n";
  char   cBuff[256];
  class  CStrTok * pStrTok;
- char   * token, cName[11], cTargetName[11];
+ const char* token;
+ char cName[11], cTargetName[11];
  register int i;
 
 	if (m_pClientList[iClientH] == NULL) return;
@@ -50358,7 +50363,7 @@ BOOL CGame::bCheckIsItemUpgradeSuccess(int iClientH, int iItemIndex, int iSomH, 
 	return FALSE;
 }
 
-BOOL CGame::bReadAdminListConfigFile(char *pFn)
+BOOL CGame::bReadAdminListConfigFile(const char *pFn)
 {
  FILE * pFile;
  HANDLE hFile;
@@ -50427,7 +50432,7 @@ BOOL CGame::bReadAdminListConfigFile(char *pFn)
 	return TRUE;
 }
 
-BOOL CGame::bReadBannedListConfigFile(char *pFn)
+BOOL CGame::bReadBannedListConfigFile(const char *pFn)
 {
  FILE * pFile;
  HANDLE hFile;
@@ -50994,7 +50999,7 @@ void CGame::LocalStartApocalypse(DWORD dwApocalypseGUID)
 	PutLogList(G_cTxt);
 }
 
-BOOL CGame::bReadApocalypseGUIDFile(char * cFn)
+BOOL CGame::bReadApocalypseGUIDFile(const char * cFn)
 {
  FILE * pFile;
  HANDLE hFile;
@@ -51051,7 +51056,7 @@ BOOL CGame::bReadApocalypseGUIDFile(char * cFn)
 	return TRUE;
 }
 
-BOOL CGame::bReadHeldenianGUIDFile(char * cFn)
+BOOL CGame::bReadHeldenianGUIDFile(const char * cFn)
 {
  FILE * pFile;
  HANDLE hFile;
@@ -57399,7 +57404,7 @@ void CGame::RequestItemDisenchantHandler(int iClientH, int iItemIndex)
 }
 
 
-char* CGame::GetShardDesc(DWORD dwType)
+const char* CGame::GetShardDesc(DWORD dwType)
 {
 	switch (dwType) {
 	case SHARD_CRITICAL:
@@ -57428,7 +57433,7 @@ char* CGame::GetShardDesc(DWORD dwType)
 	return "";
 }
 
-char* CGame::GetFragmentDesc(DWORD dwType)
+const char* CGame::GetFragmentDesc(DWORD dwType)
 {
 	switch (dwType) {
 	case FRAGMENT_PSNRES:
@@ -57461,7 +57466,7 @@ char* CGame::GetFragmentDesc(DWORD dwType)
 }
 
 
-char* CGame::GetShardName(DWORD dwType)
+const char* CGame::GetShardName(DWORD dwType)
 {
 	switch (dwType) {
 	case SHARD_CRITICAL:
@@ -57491,7 +57496,7 @@ char* CGame::GetShardName(DWORD dwType)
 	return "";
 }
 
-char* CGame::GetFragmentName(DWORD dwType)
+const char* CGame::GetFragmentName(DWORD dwType)
 {
 	switch (dwType) {
 	case FRAGMENT_PSNRES:

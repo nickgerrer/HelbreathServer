@@ -4,7 +4,7 @@
 
 #include "Map.h"
 
-extern void PutLogFileList(char * cStr);
+extern void PutLogFileList(const char * cStr);
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

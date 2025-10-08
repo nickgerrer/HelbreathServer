@@ -421,7 +421,7 @@ static string get_line(string file, string value1)
 	return "#";
 }
 
-string CClient::getvalue(string val, char* fileName)
+string CClient::getvalue(string val, const char* fileName)
 {
 	_mkdir(fileName);
 

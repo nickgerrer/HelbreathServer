@@ -8,7 +8,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-CNpc::CNpc(char * pName5)
+CNpc::CNpc(const char * pName5)
 {
  int i;
 	ZeroMemory(m_cName, sizeof(m_cName));

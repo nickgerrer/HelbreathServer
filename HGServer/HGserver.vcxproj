@@ -100,6 +100,8 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
@@ -158,6 +160,7 @@
     <ClInclude Include="StrategicPoint.h" />
     <ClInclude Include="StrTok.h" />
     <ClInclude Include="TeleportLoc.h" />
+    <ClInclude Include="TempNpcItem.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="UserMessages.h" />
     <ClInclude Include="version.h" />
@@ -191,6 +194,7 @@
     <ClCompile Include="StrategicPoint.cpp" />
     <ClCompile Include="StrTok.cpp" />
     <ClCompile Include="TeleportLoc.cpp" />
+    <ClCompile Include="TempNpcItem.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="wmain.cpp" />
     <ClCompile Include="XSocket.cpp" />

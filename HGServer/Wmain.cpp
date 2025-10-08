@@ -26,7 +26,7 @@
 #include "UserMessages.h"
 #include "resource.h"
 
-void PutAdminLogFileList(char * cStr);
+void PutAdminLogFileList(const char * cStr);
 void PutHackLogFileList(char * cStr);
 void PutPvPLogFileList(char * cStr);
 
@@ -594,7 +594,7 @@ void OnAcceptLogin()
 }
 
 
-void PutLogList(char * cMsg)
+void PutLogList(const char * cMsg)
 {
  char cTemp[120*50];
 	
@@ -696,12 +696,12 @@ void _StopTimer(MMRESULT timerid)
 }
 
 /*********************************************************************************************************************
-**  void PutLogFileList(char * cStr)																				**
+**  void PutLogFileList(const char * cStr)																				**
 **  description			:: writes data into "Events.log"															**
 **  last updated		:: November 22, 2004; 5:40 PM; Hypnotoad													**
 **	return value		:: void																						**
 **********************************************************************************************************************/
-void PutLogFileList(char * cStr)
+void PutLogFileList(const char * cStr)
 {
  FILE * pFile;
  char cBuffer[512];
@@ -720,7 +720,7 @@ void PutLogFileList(char * cStr)
 	fclose(pFile);
 }
 
-void PutAdminLogFileList(char * cStr)
+void PutAdminLogFileList(const char * cStr)
 {
  FILE * pFile;
  char cBuffer[512];
