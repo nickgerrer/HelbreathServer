@@ -33,6 +33,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)$(Configuration)\</IntDir>
+    <TargetName>Helbreath</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
